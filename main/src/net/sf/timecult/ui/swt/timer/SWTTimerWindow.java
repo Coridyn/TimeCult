@@ -147,7 +147,7 @@ public class SWTTimerWindow implements StopwatchListener {
             if (PlatformUtil.isGtk) {
                 _shell = new Shell(parent.getDisplay(), SWT.CLOSE | SWT.TITLE);
             } else {
-                _shell = new Shell(parent.getDisplay(), SWT.ON_TOP | SWT.TITLE | SWT.SINGLE);
+                _shell = new Shell(parent.getDisplay(), SWT.CLOSE | SWT.MIN | SWT.ON_TOP | SWT.TITLE | SWT.SINGLE);
             }
             if (_task.getName().length() > MAX_TITLE_CHARS) {
                 _shell.setText(_task.getName().substring(0, MAX_TITLE_CHARS)
@@ -372,13 +372,13 @@ public class SWTTimerWindow implements StopwatchListener {
 
 
     public void hide() {
-        _shell.setVisible(false);
-        if (_trayItem == null) {
-            addToTray();
-        }
-        else {
-            _trayItem.setVisible(true);
-        }
+//        _shell.setVisible(false);
+//        if (_trayItem == null) {
+//            addToTray();
+//        }
+//        else {
+//            _trayItem.setVisible(true);
+//        }
     }
 
 
